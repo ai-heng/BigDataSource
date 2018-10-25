@@ -1,0 +1,9 @@
+cn\itcast\pojo\PageBean.class
+cn\itcast\pojo\User.class
+cn\itcast\pojo\Orderitem.class
+cn\itcast\mapper\UserMapper.class
+cn\itcast\controller\PageController.class
+cn\itcast\pojo\Order.class
+cn\itcast\controller\UserController.class
+cn\itcast\service\UserService.class
+cn\itcast\pojo\Product.class

@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="itcast_account_web:war exploded">
+    <output-path>$PROJECT_DIR$/itcast_account_web/target/itcast_account_web</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="itcast_account_web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="itcast_account_service-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="itcast_account_service" />
+          </element>
+          <element id="archive" name="itcast_account_dao-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="itcast_account_dao" />
+          </element>
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.32" />
+          <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.2" />
+          <element id="library" level="project" name="Maven: commons-dbutils:commons-dbutils:1.6" />
+          <element id="library" level="project" name="Maven: junit:junit:4.10" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.1" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/itcast_account_web/target/itcast_account_web/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="itcast_account_web/web/Web" />
+    </root>
+  </artifact>
+</component>

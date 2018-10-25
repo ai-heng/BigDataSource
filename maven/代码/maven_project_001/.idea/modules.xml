@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/itcast_account_dao/itcast_account_dao.iml" filepath="$PROJECT_DIR$/itcast_account_dao/itcast_account_dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/itcast_account_service/itcast_account_service.iml" filepath="$PROJECT_DIR$/itcast_account_service/itcast_account_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/itcast_account_web/itcast_account_web.iml" filepath="$PROJECT_DIR$/itcast_account_web/itcast_account_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/itcast_parent/itcast_parent.iml" filepath="$PROJECT_DIR$/itcast_parent/itcast_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase01/javase01.iml" filepath="$PROJECT_DIR$/javase01/javase01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase02/javase02.iml" filepath="$PROJECT_DIR$/javase02/javase02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web01/web01.iml" filepath="$PROJECT_DIR$/web01/web01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web02/web02.iml" filepath="$PROJECT_DIR$/web02/web02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web03/web03.iml" filepath="$PROJECT_DIR$/web03/web03.iml" />
+    </modules>
+  </component>
+</project>

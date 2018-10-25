@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--1 配置映射处理器-->
+    <!--2 配置映射适配器-->
+    <mvc:annotation-driven/>
+    <!--3 配置自定义处理器-->
+    <context:component-scan base-package="cn.itcast.controller"/>
+    <!--4 配置视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--前缀-->
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <!--后缀-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 定义文件上传解析器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设定默认编码 -->
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+        <property name="maxUploadSize" value="5242880"></property>
+    </bean>
+
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <!--方式一 -->
+        <!--<bean class="cn.itcast.intercoptor.MyInterceptor01"/>-->
+        <!--<bean class="cn.itcast.intercoptor.MyInterceptor02"/>-->
+        <!--<bean class="cn.itcast.intercoptor.MyInterceptor03"/>-->
+
+        <!--方式二: 更加精确-->
+        <mvc:interceptor>
+            <mvc:mapping path="/show1.do"/>
+            <mvc:mapping path="/show2.do"/>
+            <bean class="cn.itcast.intercoptor.MyInterceptor01"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/show2.do"/>
+            <bean class="cn.itcast.intercoptor.MyInterceptor02"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+</beans>

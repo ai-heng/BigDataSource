@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="itcast_account_dao" />
+        <module name="itcast_account_service" />
+        <module name="itcast_account_web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="itcast_account_dao" target="1.7" />
+      <module name="itcast_account_service" target="1.7" />
+      <module name="itcast_account_web" target="1.7" />
+      <module name="itcast_parent" target="1.7" />
+      <module name="javase01" target="1.9" />
+      <module name="javase02" target="1.7" />
+      <module name="web01" target="1.7" />
+      <module name="web02" target="1.5" />
+      <module name="web03" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--1 配置映射处理器 和 映射适配器-->
+    <mvc:annotation-driven/>
+
+    <!--2 配置自定义处理器, 扫描包-->
+    <context:component-scan base-package="cn.itcast.controller"/>
+
+    <!--3 配置视图解析器 找到视图位置: 前缀 + 视图名称 + 后缀-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--前缀-->
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <!--后缀-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--4 通知springmvc框架 对静态资源 js和css文件放行-->
+    <mvc:default-servlet-handler/>
+</beans>

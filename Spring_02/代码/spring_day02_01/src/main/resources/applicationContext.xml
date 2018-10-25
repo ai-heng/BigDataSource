@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--1 目标类-->
+    <bean id="customerService" class="cn.itcast.a.CustomerService"/>
+    <bean id="productService" class="cn.itcast.a.ProductServiceImpl"/>
+
+    <!--2 增强类-->
+    <bean id="myMethodInterceptor" class="cn.itcast.c.MyMethodInterceptor"/>
+
+    <!--3 建立关系
+        proxy-target-class="false" : 优先使用jdk的动态代理
+    -->
+    <aop:config proxy-target-class="false">
+        <!--定义切入点: 拦截增强哪些方法
+                bean(*Service) : 对 以Service结尾的bean中所有方法 进行增强
+                execution(* cn.itcast..*.add(..)) : 返回值任意, 包: cn.itcast..* 包(包含当前包,也包含后代包)下的任意类
+                                                    add 拦截add方法 (..) 参数任意
+                within(cn..*) : cn.* 拦截cn包下的子类的所有方法
+                                cn..* 拦截cn包下的所有后代类的所有方法
+        -->
+        <aop:pointcut id="myPoint" expression="within(cn..*)"/>
+
+        <!--advisor 通知: 增强代码-->
+        <aop:advisor advice-ref="myMethodInterceptor" pointcut-ref="myPoint"/>
+    </aop:config>
+</beans>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    注意1: namespace 唯一, 必须是接口的全路径
+    注意2: id 唯一 且 方法名
+-->
+<mapper namespace="cn.itcast.mapper.UserMapper">
+
+    <!--开启二级缓存-->
+    <cache/>
+
+    <!--将重复使用的sql片段提取出来,方便复用-->
+    <sql id="userColumns">
+        id, user_name, password, name, age, sex, birthday, created, updated
+    </sql>
+
+    <!--
+        定义结果映射
+            autoMapping="true" : 当属性名和列名一致时,自动建立映射关系
+    -->
+    <resultMap id="userResultMap" type="User" autoMapping="true">
+        <!--映射 当前表的主键
+            property : 指pojo类的属性名
+            column : 指数据表的列名
+        -->
+        <id property="id" column="id"/>
+        <!--映射普通字段-->
+        <result property="userName" column="user_name"/>
+    </resultMap>
+
+    <!--根据编号查询用户信息-->
+    <select id="queryUserById" resultMap="userResultMap">
+        select <include refid="userColumns"/>
+        from tb_user where id = #{id}
+    </select>
+
+    <!--需求: 查询所有用户集合
+        如果返回结果是集合, resultType的值应该是 集合内元素的类型
+    -->
+    <select id="queryAll" resultType="User">
+        select <include refid="userColumns"/>
+        from tb_user
+    </select>
+
+    <!--需求: 添加用户
+        useGeneratedKeys="true"     是否允许生成的主键: true 是
+        keyProperty="id"        主键对应的属性名:
+        keyColumn="id"          主键对应的列名
+    -->
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into tb_user(id, user_name, password, name, age, sex, birthday, created, updated)
+        values(null, #{userName}, #{password}, #{name}, #{age}, #{sex}, #{birthday}, now(), now())
+    </insert>
+
+    <!--需求: 修改用户-->
+    <!--需求4：修改用户信息，如果某字段为null，则不修改这个字段-->
+    <update id="updateUser">
+        update tb_user
+        <set>
+            <if test="userName!=null and userName.trim()!=''">
+                user_name=#{userName},
+            </if>
+
+            <if test="password!=null and password.trim()!=''">
+                  password=#{password},
+            </if>
+
+            <if test="name!=null and name.trim()!=''">
+                  name=#{name},
+            </if>
+            <if test="age!=null">
+                  age=#{age},
+            </if>
+            <if test="sex!=null">
+                sex=#{sex},
+            </if>
+            <if test="birthday!=null">
+                  birthday=#{birthday},
+            </if>
+            updated=now()
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--需求: 根据编号删除用户-->
+    <delete id="delById">
+        delete from tb_user
+        where id=#{id}
+    </delete>
+
+    <!--需求: 根据用户名和密码查询用户信息-->
+    <select id="queryUserByUsernameAndPassword" resultMap="userResultMap">
+        select <include refid="userColumns"/>
+        from tb_user
+        where user_name='${uname}' and password='${pwd}'
+    </select>
+
+    <!--  需求1：查询所有男性用户，如果输入了姓名，则按照姓名模糊查找；如果没有输入则不管姓名 -->
+    <select id="queryManUsersByName" resultMap="userResultMap">
+        select <include refid="userColumns"/>
+        from tb_user
+        where sex=1
+            <if test="name!=null and name.trim()!=''">
+                and name like '%${name}%'
+            </if>
+    </select>
+
+    <!--需求2：查询所有用户，传递参数orderType，如果值为0，按照年龄升序排序，如果为1则按照年龄降序排序，否则按照ID排序-->
+    <select id="queryAllWithSort" resultMap="userResultMap">
+        select <include refid="userColumns"/>
+        from tb_user
+        <choose>
+            <when test="orderType==0">order by age asc</when>
+            <when test="orderType==1">order by age desc</when>
+            <otherwise>order by id asc</otherwise>
+        </choose>
+    </select>
+
+    <!--需求3：查询所有用户，如果有姓名不为空，则按照姓名模糊查找；如果年龄也不为空，则还要满足年龄条件。-->
+    <select id="queryAllByNameAndAge" resultMap="userResultMap">
+        select <include refid="userColumns"/>
+        from tb_user
+        <where>
+            <if test="name!=null and name.trim()!=''">
+                and name like '%${name}%'
+            </if>
+
+            <if test="age!=null">
+                and age &lt; #{age}
+            </if>
+        </where>
+    </select>
+
+    <!--需求5：根据多个ID查询用户-->
+    <select id="queryUsersByIds" resultMap="userResultMap">
+        select
+        <include refid="userColumns"/>
+        from tb_user
+        <if test="ids!=null and ids.size()>0">
+            <where>
+                and id IN
+                <foreach collection="ids" item="id" separator="," open="(" close=")">
+                    #{id}
+                </foreach>
+            </where>
+        </if>
+    </select>
+</mapper>

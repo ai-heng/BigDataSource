@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    注意1: namespace 唯一, 必须是接口的全路径
+    注意2: id 唯一 且 方法名
+-->
+<mapper namespace="cn.itcast.mapper.OrderMapper">
+    <!--结果映射
+            autoMapping="true" : 当属性名和列名一致时,不用手动配置了,自动进行映射
+    -->
+    <resultMap id="orderWithUserResultMap" type="Order" autoMapping="true">
+        <!--映射 主键
+            property : 指pojo类的属性名
+            column : 指数据表的列名
+        -->
+        <id property="oid" column="oid"/>
+        <!--关联用户信息-->
+        <association property="user" javaType="User" autoMapping="true">
+            <!--映射用户表的主键-->
+            <id property="id" column="user_id"/>
+        </association>
+    </resultMap>
+
+    <!--查询订单 携带用户 和 订单项集合-->
+    <resultMap id="orderWithUserAndOrderitemsResultMap" type="Order" autoMapping="true" extends="orderWithUserResultMap">
+        <!--配置订单表的主键-->
+        <!--关联用户-->
+        <!--关联订单项集合-->
+        <collection property="orderitemList" javaType="list" ofType="Orderitem" autoMapping="true">
+            <!--配置 订单项表的主键-->
+            <id property="itemId" column="item_id"/>
+        </collection>
+    </resultMap>
+
+    <!--	需求1：根据订单号 查询订单的同时，查询出订单所属用户-->
+    <select id="queryOrderWithUserByOrdernumber" resultMap="orderWithUserResultMap">
+        select * from tb_order o
+        left join tb_user u on o.user_id=u.id
+        where o.order_number=#{ordernumber}
+    </select>
+
+    <!--需求2：根据订单号 查询订单，并且查询出所有订单详情及所属用户-->
+    <select id="queryOrderWithUserAndOrderitemsByOrdernumber" resultMap="orderWithUserAndOrderitemsResultMap">
+        select * from tb_order o
+        left join tb_user u on o.user_id=u.id
+        left join tb_orderitem oi on oi.order_id=o.oid
+        where o.order_number=#{ordernumber}
+    </select>
+
+    <resultMap id="orderWithUserAndOrderitemsAndProductResultMap" type="Order" autoMapping="true">
+        <!--1 配置订单表的主键-->
+        <id column="oid" property="oid"/>
+
+        <!--2 关联用户表-->
+        <association property="user" javaType="User" autoMapping="true">
+            <!--配置用户表的主键-->
+            <id column="user_id" property="id"/>
+        </association>
+
+        <!--3 关联订单项集合-->
+        <collection property="orderitemList" javaType="list" ofType="Orderitem" autoMapping="true">
+            <!--3.1 配置订单项表的主键-->
+            <id property="itemId" column="item_id"/>
+
+            <!--3.2 在订单项内 关联商品表-->
+            <association property="product" javaType="Product" autoMapping="true">
+                <!--配置商品表的主键-->
+                <id property="pid" column="product_id"/>
+            </association>
+        </collection>
+    </resultMap>
+
+    <!--需求3：根据订单号 查询订单，查询出所属用户，并且查询出订单的详情，及订单详情中的对应的商品信息-->
+    <select id="queryOrderWithUserAndOrderitemsAndProductByOrdernumber" resultMap="orderWithUserAndOrderitemsAndProductResultMap">
+        select * from tb_order o
+        left join tb_user u on o.user_id=u.id
+        left join tb_orderitem oi on oi.order_id=o.oid
+        left join tb_product p on p.pid=oi.product_id
+        where o.order_number=#{ordernumber}
+    </select>
+</mapper>
