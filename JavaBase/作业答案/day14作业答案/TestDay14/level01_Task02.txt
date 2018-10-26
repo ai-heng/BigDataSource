@@ -1,0 +1,8 @@
+2.1． 训练描述：【BufferedReader、BufferedWriter】
+	一、需求说明：字符缓冲区流的特殊功能复制Java文件
+2.2． 操作步骤描述
+	1.	创建BufferedReader输入流对象关联源文件
+	2.	创建BufferedWriter输出流对象关联目标文件
+	3.	调用readLine方法不断的读取，只要不等于null 说明没有读取完毕
+	4.	调用writer方法直接写出字符串，但是要加上newLine方法手动换行
+	5.	关闭流释放资源

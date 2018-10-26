@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			
+			//3. 定义变量, 记录字体大小
+			var num = 20;
+			function changeBig(){
+				//1. 获取要进行字体变大的那个: div
+				var d1 = document.getElementById("d1");
+
+				num += 20;
+				
+				//2. 设置其 fontSize属性值为: 变大后的值
+				d1.style.fontSize = num + "px";
+			}
+		</script>
+		
+	</head>
+	<body>
+		<div id="d1" onclick="changeBig()">大</div>
+		<hr  />
+		<div>我也想变大</div>
+	</body>
+</html>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+           version="2.5">
+
+
+    <!--明确二: 同一个资源可不可以被多个过滤器过滤?
+    可以.
+-->
+    <filter>
+        <filter-name>Filter2</filter-name>
+        <filter-class>com.itheima.web.filter.Filter2</filter-class>
+        <init-param>
+            <param-name>size</param-name>
+            <param-value>666</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter2</filter-name>
+        <url-pattern>/hello.jsp</url-pattern>
+           <!--默认的拦截方式-->
+           <dispatcher>REQUEST</dispatcher>
+           <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
+
+    <listener>
+        <listener-class>com.itheima.web.listener.MyRequestListener</listener-class>
+    </listener>
+
+
+    <!--设置Filter`过滤器的信息-->
+   <!-- <filter>
+        <filter-name>Filter1</filter-name>
+        <filter-class>com.itheima.web.filter.Filter1</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter1</filter-name>
+        &lt;!&ndash;设置拦截路径&ndash;&gt;
+        &lt;!&ndash;
+            明确一: 一个过滤器可不可以同时过滤多个资源?
+                    可以.
+        &ndash;&gt;
+        <url-pattern>/hello.jsp</url-pattern>
+    </filter-mapping>-->
+
+    <filter>
+        <filter-name>PostEncodingFilter</filter-name>
+        <filter-class>com.itheima.web.filter.PostEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>PostEncodingFilter</filter-name>
+        <url-pattern>/demo1Servlet</url-pattern>
+    </filter-mapping>
+
+    <!--指定一个: 通用的解决get和post方式的乱码问题-->
+    <filter>
+        <filter-name>GenericEncodingFilter</filter-name>
+        <filter-class>com.itheima.web.filter.GenericEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>GenericEncodingFilter</filter-name>
+        <!--这里的/的意思是:
+            http://ip地址:端口号/项目名/
+        -->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--设置HelloServlet的信息-->
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/helloServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--设置Demo1Servlet的信息-->
+    <servlet>
+        <servlet-name>Demo1Servlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.Demo1Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo1Servlet</servlet-name>
+        <url-pattern>/demo1Servlet</url-pattern>
+    </servlet-mapping>
+
+    <!--设置Demo2Servlet的信息-->
+    <servlet>
+        <servlet-name>Demo2Servlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.Demo2Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo2Servlet</servlet-name>
+        <url-pattern>/demo2Servlet</url-pattern>
+    </servlet-mapping>
+
+    <!--设置Demo3Servlet的信息-->
+    <servlet>
+        <servlet-name>Demo3Servlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.Demo3Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo3Servlet</servlet-name>
+        <url-pattern>/demo3Servlet</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,20 @@
+	public V put(K key, V value) {
+        //key.hashCode()
+        //根据key的hashCode()方法计算出了一个哈希值
+        int hash = hash(key);
+        int i = indexFor(hash, table.length);
+        //遍历集合，得到每一个元素，和新添加的元素进行比较，如果相同，就不添加，如果不同，就添加。
+        for (Entry<K,V> e = table[i]; e != null; e = e.next) {
+            Object k;
+            if (e.hash == hash && ((k = e.key) == key || key.equals(k))) {
+                V oldValue = e.value;
+                e.value = value;
+                e.recordAccess(this);
+                return oldValue;
+            }
+        }
+
+        modCount++;
+        addEntry(hash, key, value, i); //添加元素的操作
+        return null;
+    }

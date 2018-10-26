@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+           version="2.5">
+
+    <!--设置ServletResponse1的信息-->
+    <servlet>
+        <servlet-name>ServletResponse1</servlet-name>
+        <servlet-class>com.itheima.web.http.ServletResponse1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletResponse1</servlet-name>
+        <url-pattern>/servletResponse1</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletResponse2的信息-->
+    <servlet>
+        <servlet-name>ServletResponse2</servlet-name>
+        <servlet-class>com.itheima.web.http.ServletResponse2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletResponse2</servlet-name>
+        <url-pattern>/servletResponse2</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletResponse3的信息-->
+    <servlet>
+        <servlet-name>ServletResponse3</servlet-name>
+        <servlet-class>com.itheima.web.http.ServletResponse3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletResponse3</servlet-name>
+        <url-pattern>/servletResponse3</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletResponse4的信息-->
+    <servlet>
+        <servlet-name>ServletResponse4</servlet-name>
+        <servlet-class>com.itheima.web.http.ServletResponse4</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletResponse4</servlet-name>
+        <url-pattern>/servletResponse4</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletJsp1的信息-->
+    <servlet>
+        <servlet-name>ServletJsp1</servlet-name>
+        <servlet-class>com.itheima.web.jsp.ServletJsp1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletJsp1</servlet-name>
+        <url-pattern>/servletJsp1</url-pattern>
+    </servlet-mapping>
+</web-app>

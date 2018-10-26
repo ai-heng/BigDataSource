@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+           version="2.5">
+
+    <!--校验: 用户名-->
+    <servlet>
+        <servlet-name>CheckUsernameServlet</servlet-name>
+        <servlet-class>com.itheima.web.CheckUsernameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckUsernameServlet</servlet-name>
+        <url-pattern>/checkUsernameServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!--校验: 昵称-->
+    <servlet>
+        <servlet-name>CheckNicknameServlet</servlet-name>
+        <servlet-class>com.itheima.web.CheckNicknameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckNicknameServlet</servlet-name>
+        <url-pattern>/checkNicknameServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!--动态加载: 分类信息-->
+    <servlet>
+        <servlet-name>CategoryListServlet</servlet-name>
+        <servlet-class>com.itheima.web.CategoryListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoryListServlet</servlet-name>
+        <url-pattern>/categoryListServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--省市区三级联动-->
+    <servlet>
+        <servlet-name>PcdListServlet</servlet-name>
+        <servlet-class>com.itheima.web.PcdListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PcdListServlet</servlet-name>
+        <url-pattern>/pcdListServlet</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			//页面加载完毕后执行
+			//页面加载事件
+			onload = function() {
+				/*
+				 	childNodes:		//获取指定元素下所有的子节点
+					firstChild:		//获取指定元素的 第一个子节点			***
+					lastChild:		//获取指定元素的 最后一个子节点
+					parentNode:		//获取指定元素的父节点
+					nodeName:		//获取指定的节点名
+					nodeType:		//获取指定的节点类型
+					nodeValue:		//获取指定的节点值
+				 */
+				var d1 = document.getElementById("d1");
+				//需求1: 获取id为d1的元素的: 所有的子节点.
+				/*var v1 = d1.childNodes;
+				//console.info(v1.length)
+				//遍历
+				for(var i=0; i<v1.length; i++) {
+					console.info(v1[i])
+				}*/
+				
+				//需求2: 获取id为d1的元素的:  第一个子节点
+				console.info(d1.firstChild);
+				
+				//需求3: 获取id为d1的元素的: 最后一个子节点.
+				console.info(d1.lastChild);
+				
+				//需求4: 获取id为d1的元素的: 父节点.
+				console.info(d1.parentNode)
+				
+				//需求5: 获取id为d1的元素的: 节点名.
+				console.info(d1.nodeName);
+				
+				//需求6: 获取id为d1的元素的: 节点类型.		//元素节点:1, 属性节点:2, 文本节点:3
+				console.info(d1.nodeType)
+				console.info(d1.firstChild.nodeType)
+				
+				//需求7: 获取id为d1的元素的: 第一个节点的节点值.		
+				console.info(d1.firstChild.nodeValue);
+				
+			}
+			
+		</script>
+		
+	</head>
+	<body> 
+		<div id="d1">
+			<input type="button" id="b1" name="btn" value="按钮1" />
+			<input type="button" id="b1" name="btn" value="按钮2" />
+			<input type="button" id="b1" name="btn" value="按钮3" /></div>
+	</body>
+</html>

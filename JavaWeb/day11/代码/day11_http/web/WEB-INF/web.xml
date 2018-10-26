@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+           version="2.5">
+
+    <!--配置ServletConfig1的信息-->
+    <!--设置具体的要访问的: Java代码-->
+    <servlet>
+        <servlet-name>ServletConfig1</servlet-name>
+        <servlet-class>com.itheima.web.servletconfig.ServletConfig1</servlet-class>
+        <!--设置当前Servlet的参数信息-->
+        <init-param>
+            <param-name>size</param-name>
+            <param-value>260</param-value>
+        </init-param>
+    </servlet>
+    <!--配置浏览器访问该资源的具体: 路径-->
+    <servlet-mapping>
+        <servlet-name>ServletConfig1</servlet-name>
+        <url-pattern>/servletConfig1</url-pattern>
+    </servlet-mapping>
+    
+    <!--配置ServletConfig2的信息-->
+    <servlet>
+        <servlet-name>ServletConfig2</servlet-name>
+        <servlet-class>com.itheima.web.servletconfig.ServletConfig2</servlet-class>
+
+        <!--设置ServletConfig2的配置参数信息-->
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>张三</param-value>
+        </init-param>
+        <init-param>
+            <param-name>gender</param-name>
+            <param-value>nan</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletConfig2</servlet-name>
+        <url-pattern>/servletConfig2</url-pattern>
+    </servlet-mapping>
+    
+    <!--设置ServletContext1的信息-->
+    <servlet>
+        <servlet-name>ServletContext1</servlet-name>
+        <servlet-class>com.itheima.web.servletcontext.ServletContext1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletContext1</servlet-name>
+        <url-pattern>/servletContext1</url-pattern>
+    </servlet-mapping>
+
+
+    <!--设置ServletContext2的信息-->
+    <servlet>
+        <servlet-name>ServletContext2</servlet-name>
+        <servlet-class>com.itheima.web.servletcontext.ServletContext2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletContext2</servlet-name>
+        <url-pattern>/servletContext2</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletContext3的信息-->
+    <servlet>
+        <servlet-name>ServletContext3</servlet-name>
+        <servlet-class>com.itheima.web.servletcontext.ServletContext3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletContext3</servlet-name>
+        <url-pattern>/servletContext3</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletContext4的信息-->
+    <servlet>
+        <servlet-name>ServletContext4</servlet-name>
+        <servlet-class>com.itheima.web.servletcontext.ServletContext4</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletContext4</servlet-name>
+        <url-pattern>/servletContext4</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletContext5的信息-->
+    <servlet>
+        <servlet-name>ServletContext5</servlet-name>
+        <servlet-class>com.itheima.web.servletcontext.ServletContext5</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletContext5</servlet-name>
+        <url-pattern>/servletContext5</url-pattern>
+    </servlet-mapping>
+    
+    <!--设置ServletHttp1的信息-->
+    <servlet>
+        <servlet-name>ServletHttp1</servlet-name>
+        <servlet-class>com.itheima.web.http.ServletHttp1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletHttp1</servlet-name>
+        <url-pattern>/servletHttp1</url-pattern>
+    </servlet-mapping>
+
+
+    <!--设置ServletHttp2的信息-->
+    <servlet>
+        <servlet-name>ServletHttp2</servlet-name>
+        <servlet-class>com.itheima.web.http.ServletHttp2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletHttp2</servlet-name>
+        <url-pattern>/servletHttp2</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletHttp3的信息-->
+    <servlet>
+        <servlet-name>ServletHttp3</servlet-name>
+        <servlet-class>com.itheima.web.http.ServletHttp3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletHttp3</servlet-name>
+        <url-pattern>/servletHttp3</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletHttp4的信息-->
+    <servlet>
+        <servlet-name>ServletHttp4</servlet-name>
+        <servlet-class>com.itheima.web.http.ServletHttp4</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletHttp4</servlet-name>
+        <url-pattern>/servletHttp4</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletHttp5的信息-->
+    <servlet>
+        <servlet-name>ServletHttp5</servlet-name>
+        <servlet-class>com.itheima.web.http.ServletHttp5</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletHttp5</servlet-name>
+        <url-pattern>/servletHttp5</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+
+
+    <!--设置当前项目的配置信息-->
+    <context-param>
+        <param-name>faren</param-name>
+        <param-value>马云</param-value>
+    </context-param>
+    <context-param>
+        <param-name>company</param-name>
+        <param-value>alibaba</param-value>
+    </context-param>
+</web-app>

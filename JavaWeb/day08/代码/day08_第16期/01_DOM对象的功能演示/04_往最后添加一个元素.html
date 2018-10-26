@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			var index = 1;
+			function addElement(){
+				//1. 获取要添加子元素的: 父标签.		 id="s1"
+				var s1 = document.getElementById("s1"); 
+				
+				//2. 创建要添加的: 元素节点.			<option></option>
+				var e1 = document.createElement("option"); 
+				
+				//3. 创建要添加的: 文本节点.			广州
+				var t1 = document.createTextNode("广州  " + index++);
+
+				//4. 把文本节点添加到: 元素节点中.		<option>广州</option>
+				e1.appendChild(t1);
+				
+				//5. 把元素节点添加到: 父标签中.
+				s1.appendChild(e1);
+			
+			}
+		</script>
+		
+	</head>
+	<body>
+		<input type="button"  value="点我添加" onclick="addElement()"/>
+		<select id="s1">
+			<option>北京</option>
+			<option>上海</option>
+			<!--需求: 在这里添加一个: 广州-->
+			
+			
+			
+		</select>
+	</body>
+</html>

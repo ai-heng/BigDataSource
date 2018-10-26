@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			//删除功能, 删除红烧肉
+			function removeElement(){
+				//1. 获取父标签.
+				var d1 = document.getElementById("d1");
+				//2. 获取要删除的元素.
+				var hsr = document.getElementById("hsr");
+				//3. 删除指定的元素.
+				d1.removeChild(hsr);
+			}
+			
+			//替换功能    父节点.replaceChild(新节点, 旧节点)
+			function replaceElement(){
+				//1. 获取父标签.
+				var d1 = document.getElementById("d1");
+			
+				//2. 创建元素节点.					<p></p>
+				var e1 = document.createElement("p");
+				
+				//3. 创建文本节点.					面条
+				var t1 = document.createTextNode("面条");
+				
+				//4. 把文本节点添加到: 元素节点中.		<p>面条</p>
+				e1.appendChild(t1);
+				
+				//5. 获取旧节点. 					<p id="mf">米饭</p>
+				var mf = document.getElementById("mf");
+				
+				//6. 替换指定的元素
+				d1.replaceChild(e1, mf);
+			}
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<input type="button" value="点我删除" onclick="removeElement()" />
+		<input type="button" value="点我替换" onclick="replaceElement()" />
+		
+		<div id="d1">
+			<p>臭豆腐</p>
+			<p>螺蛳粉</p>
+			<p>榴莲</p>
+			<p id="hsr">红烧肉</p>
+			<p>鲱鱼罐头</p>
+			<p>臭桂鱼</p>
+			<p id="mf">米饭</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+           version="2.5">
+
+    <!--设置ServletCookie1的信息-->
+    <servlet>
+        <servlet-name>ServletCookie1</servlet-name>
+        <servlet-class>com.itheima.web.ServletCookie1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletCookie1</servlet-name>
+        <url-pattern>/servletCookie1</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletCookie2的信息-->
+    <servlet>
+        <servlet-name>ServletCookie2</servlet-name>
+        <servlet-class>com.itheima.web.ServletCookie2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletCookie2</servlet-name>
+        <url-pattern>/servletCookie2</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletCookie3的信息-->
+    <servlet>
+        <servlet-name>ServletCookie3</servlet-name>
+        <servlet-class>com.itheima.web.ServletCookie3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletCookie3</servlet-name>
+        <url-pattern>/servletCookie3</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletCookie4的信息-->
+    <servlet>
+        <servlet-name>ServletCookie4</servlet-name>
+        <servlet-class>com.itheima.web.ServletCookie4</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletCookie4</servlet-name>
+        <url-pattern>/servletCookie4</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletCookie5的信息-->
+    <servlet>
+        <servlet-name>ServletCookie5</servlet-name>
+        <servlet-class>com.itheima.web.ServletCookie5</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletCookie5</servlet-name>
+        <url-pattern>/servletCookie5</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletSession1的信息-->
+    <servlet>
+        <servlet-name>ServletSession1</servlet-name>
+        <servlet-class>com.itheima.web.ServletSession1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletSession1</servlet-name>
+        <url-pattern>/servletSession1</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletSession2的信息-->
+    <servlet>
+        <servlet-name>ServletSession2</servlet-name>
+        <servlet-class>com.itheima.web.ServletSession2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletSession2</servlet-name>
+        <url-pattern>/servletSession2</url-pattern>
+    </servlet-mapping>
+
+    <!--设置ServletSession3的信息-->
+    <servlet>
+        <servlet-name>ServletSession3</servlet-name>
+        <servlet-class>com.itheima.web.ServletSession3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletSession3</servlet-name>
+        <url-pattern>/servletSession3</url-pattern>
+    </servlet-mapping>
+
+    <!--设置Session的最大生存时间, 为50分钟-->
+    <!--<session-config>
+        <session-timeout>50</session-timeout>
+    </session-config>-->
+</web-app>

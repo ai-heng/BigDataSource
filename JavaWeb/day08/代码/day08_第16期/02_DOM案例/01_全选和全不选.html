@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			function getSelection(){
+				//核心思路: 保证name为message的所有复选框的选中状态 和 id为c1的复选框的选中状态一致, 即可.
+				
+				//1. 获取idid为c1的复选框.
+				var c1 = document.getElementById("c1");
+				
+				//2. 获取name为message的所有复选框.
+				var messages = document.getElementsByName("message");
+				//3. 遍历第二步获取到的数组.
+				for(var i=0; i<messages.length; i++) {
+					//4. 保持选中状态一致.
+					messages[i].checked = c1.checked;
+				}
+			}
+		</script>
+		
+	</head>
+	<body>
+		<!--准备数据-->
+		<table border="1px" width="400px">
+			<!--第一行-->
+			<tr>
+				<td>
+					<input type="checkbox" name="c1" id="c1" onclick="getSelection()"/>
+				</td>
+				<td>姓名</td>
+				<td>性别</td>
+				<td>年龄</td>
+				<td>专业</td>
+			</tr>
+			
+			<!--第二行-->
+			<tr>
+				<td>
+					<input type="checkbox" name="message" />
+				</td>
+				<td>芳芳</td>
+				<td>女</td>
+				<td>18</td>
+				<td>挖掘机</td>
+			</tr>
+			<!--第三行-->
+			<tr>
+				<td>
+					<input type="checkbox" name="message"  />
+				</td>
+				<td>项羽</td>
+				<td>男</td>
+				<td>32</td>
+				<td>大数据</td>
+			</tr>
+			<!--第四行-->
+			<tr>
+				<td>
+					<input type="checkbox" name="message"  />
+				</td>
+				<td>曹峥</td>
+				<td>女</td>
+				<td>35</td>
+				<td>PHP</td>
+			</tr>
+		</table>
+	</body>
+</html>

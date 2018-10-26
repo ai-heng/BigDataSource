@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+           version="2.5">
+
+    <!--设置Demo1Servlet的信息-->
+    <!--设置具体的要访问的: Java代码-->
+    <servlet>
+        <servlet-name>Demo1Servlet</servlet-name>
+        <servlet-class>com.itheima.test02_servlet快速入门.Demo1Servlet</servlet-class>
+    </servlet>
+
+    <!--设置浏览器访问Java代码的具体: 路径-->
+    <servlet-mapping>
+        <servlet-name>Demo1Servlet</servlet-name>
+        <!-- 第一个/的意思: http://ip地址:端口号/项目名/  -->
+        <url-pattern>/demo1Servlet</url-pattern>
+    </servlet-mapping>
+
+    <!--设置Demo2Servlet的配置信息-->
+    <servlet>
+        <servlet-name>Demo2Servlet</servlet-name>
+        <servlet-class>com.itheima.test02_servlet快速入门.Demo2Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo2Servlet</servlet-name>
+        <url-pattern>/demo2Servlet</url-pattern>
+    </servlet-mapping>
+    
+    <!--设置Demo3Servlet-->
+    <servlet>
+        <servlet-name>Demo3Servlet</servlet-name>
+        <servlet-class>com.itheima.test03_重点掌握.Demo3Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo3Servlet</servlet-name>
+
+        <!--URL-patter的写法: 3种-->
+        <!--第一种: 直接写, 必须完全匹配-->
+       <!--<url-pattern>/demo3Servlet</url-pattern>-->
+        <!-- <url-pattern>/demo3Servlet/aa</url-pattern>
+        <url-pattern>/demo3Servlet/aa/bb</url-pattern>-->
+
+        <!--第二种: 通配符匹配: 前边固定, 后边随便写-->
+       <!-- <url-pattern>/demo3Servlet/*</url-pattern>-->
+
+        <!--第三种: 指定后缀名, 前边随便写, 后边固定 -->
+        <url-pattern>*.hh</url-pattern>
+    </servlet-mapping>
+    
+    <!--配置Demo4Servlet的信息-->
+    <servlet>
+        <servlet-name>Demo4Servlet</servlet-name>
+        <servlet-class>com.itheima.test03_重点掌握.Demo4Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo4Servlet</servlet-name>
+        <url-pattern>/demo4Servlet</url-pattern>
+    </servlet-mapping>
+
+    <!--配置LoginServlet的信息-->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.itheima.test03_重点掌握.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>

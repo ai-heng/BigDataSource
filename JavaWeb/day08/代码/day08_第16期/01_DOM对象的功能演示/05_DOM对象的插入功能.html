@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var index = 1;
+			//格式:  父节点.insertBefore(新节点,旧节点);
+			function insertElement(){
+				//1. 获取要操作的: 父标签.		id="d1"
+				var d1 = document.getElementById("d1");
+				//2. 创建要插入的节点元素.			<p></p>
+				var e1 = document.createElement("p");
+				//3. 创建文本节点.				高铁
+				var t1 = document.createTextNode("高铁  " + index++);
+				//4. 把文本节点添加到: 元素节点中. 	<p>高铁</p>
+				e1.appendChild(t1);
+				
+				//5. 获取旧节点.				id为yt的元素
+				var yt = document.getElementById("yt");
+				
+				//6. 插入数据.
+				d1.insertBefore(e1, yt);
+				
+			}
+			
+		</script>
+		
+		
+	</head>
+	<body>
+		<input type="button" value="点我插入" onclick="insertElement()"/>
+		<div id="d1">
+			<p>飞机</p>
+			<!--需求: 这里插入一个高铁-->
+			<p id="yt">游艇</p>
+		</div>
+	</body>
+</html>

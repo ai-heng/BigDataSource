@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 全局函数:
+			 * 	概述: 就是JS自带的函数, 我们可以直接拿来用.
+			 * 
+			 * 	eval(): 将字符串当成脚本来执行. //后边将Ajax会用到.
+				parseInt();		转成整数
+				parseFloat(); 	转成小数
+				toString();  	转成字符串
+				
+				encodeURIComponent(); 把字符串编码为 URI 组件。
+				decodeURIComponent(); 解码一个编码的 URI 组件。
+						后边讲Cookie的时候会用到, 登陆页面的时候, 缓存数据可以存在Cookie里边, 
+						但是Cookie默认是不能存中文的, 就可以通过这两个方法对字符串进行编码和解码.
+			 */
+			var v1 = "alert('看看我执行了吗?')";
+			eval(v1);
+			
+			var v2 = "张三Love李四";
+			//URI编码
+			var v3 = encodeURI(v2);
+			console.info("v3 = " + v3)
+			
+			//URI解码
+			var v4 = decodeURI(v3);
+			console.info("v4 = " + v4)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

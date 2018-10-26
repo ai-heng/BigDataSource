@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+				 算术运算符:
+					+, -, *, /, %, ++, --
+					
+				赋值运算符:
+					=, +=, -=, *=, /=, %=
+					
+				比较运算符:
+					>, <, >=, <=, != , ==, ===(全等于)
+						==和===解释: 
+							==: 只校验值是否相等.
+							===(全等于): 既校验值是都相等, 也校验值的类型是否相同.
+					
+				逻辑运算符:	
+					&&, ||, !
+				条件运算符:	//和Java中的三元运算符一样.
+					var num = num1 > num2 ? num1 : num2;
+				逗号运算符:
+					//相当于同时声明多个变量.
+					var num1 = 1, num2 = 2, num3 = 3;
+				 
+			 */
+			// 算术运算符:
+			var v1 = 10;
+			console.info(v1++ + 2) 
+			
+			//赋值运算符:
+			
+			//比较运算符:
+			console.info(null == undefined)			//true, undefined是从null派生过来的,  ==只比较值
+			console.info(null === undefined)		//false, ===不仅比较值, 还比较类型
+			
+			//逻辑运算符:	
+			console.info(true || false)
+			
+			//条件运算符
+			var max = 3 < 5 ? 3 : 5;
+			console.info(max)
+			
+			//逗号运算符:
+			var num1 = 1, num2 = 2, num3 = 3,num4, num5="abc";
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

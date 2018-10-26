@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			//1. 准备城市信息
+			var allCity = new Array();
+			allCity[0] = ["郑州市","新乡市","安阳市","开封市","商丘市","焦作市"];
+			allCity[1] = ["石家庄市","保定市","邯郸市","秦皇岛市"];
+			allCity[2] = ["济南市","青岛市","日照市","潍坊市","烟台市"];
+			allCity[3] = ["太原市","汾阳市","晋中市","临汾市","吕梁市","大同市"];
+				
+			function selectCity(val){
+				//alert(val)
+				//2. 获取所有的城市信息.		"郑州市","新乡市","安阳市","开封市","商丘市","焦作市"
+				var citys = allCity[val];
+				
+				//3. 获取要添加城市信息的元素:  父标签.		<select id="city">
+				var city = document.getElementById("city");
+				
+				//9. 添加数据之前, 清除城市信息.
+				city.innerHTML = "<option>--请选择市--</option>";
+				
+				//4. 因为获取的城市信息有多个, 所以遍历, 获取到每一个城市信息.
+				for(var i=0; i<citys.length; i++) {
+					//citys[i]: 记录的就是每一个城市信息.    "郑州市"
+					
+					//5. 创建元素节点.			<option></option>
+					var e1 = document.createElement("option");
+					
+					//6. 创建文本节点.			citys[i]
+					var t1 = document.createTextNode(citys[i]);
+					
+					//7. 把文本节点添加到元素节点中.		<option>郑州市</option>
+					e1.appendChild(t1);
+					
+					//8. 把元素节点添加到父标签中.
+					city.appendChild(e1);
+				}
+			}
+			
+		</script>
+		
+	</head>
+	<body>
+		<select id="province" onchange="selectCity(this.value)">
+			<option value="">--请选择省--</option>
+			<option value="0">河南省</option>
+			<option value="1">河北省</option>
+			<option value="2">山东省</option>
+			<option value="3">山西省</option>
+		</select>
+		
+		<select id="city">
+			<option>--请选择市--</option>
+		</select>
+	</body>
+</html>

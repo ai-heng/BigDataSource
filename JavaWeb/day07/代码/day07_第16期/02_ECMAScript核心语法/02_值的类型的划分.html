@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!--内部引入-->
+		<script>
+			/*
+			 *  为什么要划分JS中的值的类型呢?
+			 * 		为了明确这个值是存储在哪里, 存储在堆, 还是存储在栈?
+			 * 
+			 * 	原始值:
+			 * 		//存储在栈中, null除外(存储在堆中.)
+			 * 		String
+			 * 		Number
+			 * 		Boolean
+			 * 		Null	
+			 * 		Undefined:
+			 * 
+			 * 	引用值:
+			 * 		//存储在堆中. 
+			 * 
+			 * 
+			 * 怎么判断是什么值呢?
+			 * 	通过 typeof关键字.
+			 * 	格式:
+			 * 		typeof 值或者变量名
+			 * 
+			 * 	返回:	
+			 * 		string, number, boolean, undefined: 说明是原始值
+			 * 	返回:
+			 * 		object, 说明是引用值或者null.
+			 * 	
+			 * 
+			 */
+			
+			var v1 = "abc";
+			var v2 = 123;
+			var v3 = 10.3;
+			var v4 = false;
+			var v5 = null;		//???
+			var v6;
+			var v7 = new Array(1,2,3,4,5);
+			
+			//Boolean 对象是 Boolean 原始类型的引用类型。
+			var v8 = new Boolean(false);
+			
+			//警告框
+			/*alert(v1)
+			alert(v2)
+			alert(v3)
+			alert(v4)
+			alert(v5)
+			alert(v6)
+			alert(v7)*/
+			
+			//输出语句
+			console.info(typeof v1)
+			console.info(typeof v2)
+			console.info(typeof v3)
+			console.info(typeof v4)
+			console.info(typeof v5)
+			console.info(typeof v6)
+			console.info(typeof v7)
+			console.info(typeof v8)
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

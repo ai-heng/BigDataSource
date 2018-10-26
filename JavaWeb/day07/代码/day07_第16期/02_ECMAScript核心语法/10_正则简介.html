@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 正则表达式:
+			 * 	 概述:
+			 * 		正确的 符合某种特定规则的 表达式(字符串).
+			 * 
+			 * 	要求:
+			 * 		能用我们将的规则, 看懂别人写的正则表达式, 并且会简单的修改即可.
+			 * 		
+			 *  正则的校验有两种方式: 
+					String#match();
+						//字符串.match("正则表达式");		返回正确的结果, 没有匹配项就返回null
+					RegExp#test();
+						//正则表达式.test(字符串);			返回true, false
+			 */
+			//需求1: 判断字符串中是否包含字母: a
+			var v1 = "bac";
+			var pattern1 = /a/;
+			
+			//一般不用
+			//console.info(v1.match(pattern1))
+			
+			//常用
+			console.info(pattern1.test(v1))
+			
+			
+			//需求2: 判断字符串是否以: 字母开头
+			var v2 = "b123";
+			var pattern2 = /^[a-zA-Z]/;
+			console.info(pattern2.test(v2))
+			
+			//需求2: 判断字符串前两个字符是否是: 字母
+			var v3 = "ab123";
+			var pattern3 = /^[a-zA-Z]{2}/;
+			console.info(pattern3.test(v3))
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

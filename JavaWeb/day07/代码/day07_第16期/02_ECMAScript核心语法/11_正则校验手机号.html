@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 手机号的规则:
+			 * 	1. 必须以数字1开头.
+			 * 	2. 第二位数字必须是: 3 ~ 9
+			 * 	3. 必须是纯数字.
+			 * 	4. 必须是11位.
+			 */
+			
+			var phone = "13112345678";
+			var pattern = /^1[3-9][0-9]{9}$/;
+			
+			console.info(pattern.test(phone))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+           version="2.5">
+
+    <!--加载所有的商品信息-->
+    <servlet>
+        <servlet-name>ProductListServlet</servlet-name>
+        <servlet-class>com.itheima.web.ProductListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductListServlet</servlet-name>
+        <url-pattern>/productListServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--动态加载所有的商品分类信息-->
+    <servlet>
+        <servlet-name>CategoryListServlet</servlet-name>
+        <servlet-class>com.itheima.web.CategoryListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoryListServlet</servlet-name>
+        <url-pattern>/categoryListServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--添加商品信息-->
+    <servlet>
+        <servlet-name>AddProductServlet</servlet-name>
+        <servlet-class>com.itheima.web.AddProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddProductServlet</servlet-name>
+        <url-pattern>/addProductServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--编辑商品信息前, 加载该商品的信息, 回显-->
+    <servlet>
+        <servlet-name>EditUIProductServlet</servlet-name>
+        <servlet-class>com.itheima.web.EditUIProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditUIProductServlet</servlet-name>
+        <url-pattern>/editUIProductServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>

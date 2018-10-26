@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			console.info("以下是隐式类型转换:********************************")
+			/*
+			 * toString();
+			 * parseInt();
+			 * parseFloat();
+			 */
+			/*var v1 = 123;
+			v1 = v1.toString();
+			console.info("v1 = " + (v1 + 4))*/
+			
+			var v2 = "a101.3abc"
+			console.info(parseInt(v2) + 3)	  //NaN: not a number, 不是一个数字
+			
+			var v3 = "6.2.3abc"
+			console.info(parseFloat(v3) + 0.1)
+			
+			
+			console.info("以下是强制类型转换:********************************")
+			/*
+				String(给定的值); //把给定的值转成字符串.
+								  //类似于 值.toString()这种方式.
+								  
+				Number(给定的值); 
+						//把给定的值转成数字. 如果给定的值是false和true, 那么则分别转成0和1.
+			
+				Boolean(给定的值); /
+		 		/把给定的值转成boolean类型, 值是非空字符串, 非零数字, 非null的情况下返回true, 其他返回false.
+			 */
+			
+			var v4 = 12;
+			console.info(String(v4) + 2);
+			
+			var v5 = true; 
+			console.info(Number(v5))
+			 
+			console.info("*****************")
+			var v6 = !"";
+			var v7 = !0;
+			var v8 = !null;
+			console.info(Boolean(v6))
+			console.info(Boolean(v7))
+			console.info(Boolean(v8)) 
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

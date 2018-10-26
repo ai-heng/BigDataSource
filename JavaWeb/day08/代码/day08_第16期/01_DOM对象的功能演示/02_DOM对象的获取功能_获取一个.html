@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>掌握</title>
+		
+		<!--内部引入-->
+		<script>
+			//document.getElementById("元素的id");	
+			//根据元素的Id获取指定的元素, 获取的是一个(首匹配项).
+			
+			//页面加载完毕后, 再来执行下述的JS代码
+			onload = function() {
+				//获取id为b1的那个元素
+				var b1 = document.getElementById("b1");
+				console.info(b1);  
+				
+				//alert("看看我没有执行结束, 按钮会不会出来")
+			}
+		</script>
+		
+	</head>
+	<body>
+		<div id="d1">
+			<input type="button" id="b1" name="btn" value="按钮1"/>
+			<input type="button" id="b1" name="btn" value="按钮2"/>
+			<input type="button" id="b1" name="btn" value="按钮3"/>
+		</div>
+	</body>
+</html>
